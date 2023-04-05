@@ -48,10 +48,10 @@ void initWiFi()
     }
     count = count + 1;
   }
-  Serial.println("");
-  Serial.print("IP: ");
+  Serial.println(F(""));
+  Serial.print(F("IP: "));
   Serial.println(WiFi.localIP());
-  Serial.print("RRSI: ");
+  Serial.print(F("RRSI: "));
   Serial.println(WiFi.RSSI());
 }
 
