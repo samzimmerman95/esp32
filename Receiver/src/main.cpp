@@ -9,7 +9,7 @@
 #include <iostream>
 #include <secrets.h> //Header file with secrets define. Not tracked in git
 
-#define NUM_SENSORS 2
+#define NUM_SENSORS 5
 #define LED 2
 
 // Define Firebase Data object
@@ -23,7 +23,7 @@ int count = 0;
 // instantiate an object for the nRF24L01 transceiver
 RF24 radio(4, 5); // CE pin, CSN pin
 uint8_t address[][6] = {"1Node"};
-float payloadList[NUM_SENSORS] = {0.0, 0.0};
+float payloadList[NUM_SENSORS] = {0.0, 0.0, 0.0, 0.0, 0.0};
 const float zero = 0.0;
 
 // Replace with your network credentials (STATION)
@@ -169,7 +169,7 @@ void loop()
     Serial.println(F("Firebase Ready and data found"));
     epochTime = getTime();
     char path[25] = "";
-    sprintf(path, "/test2/%i000", epochTime);
+    sprintf(path, "/lake23/%i000", epochTime);
     // Serial.println(path);
     Serial_Printf("Set temp ... %s\n", Firebase.RTDB.setArray(&fbdo, path, &send_array) ? "ok" : fbdo.errorReason().c_str());
     send_array.clear();

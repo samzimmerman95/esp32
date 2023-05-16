@@ -7,7 +7,7 @@
 #include <DallasTemperature.h>
 
 #define ONE_WIRE_BUS 14
-#define NUM_SENSORS 2
+#define NUM_SENSORS 5
 #define PWR_CONTROLLER_DONE 22
 
 // instantiate an object for the nRF24L01 transceiver
